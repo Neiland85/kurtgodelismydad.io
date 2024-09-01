@@ -1,5 +1,9 @@
 {
     "projectManager.git.baseFolders": [
         "GITHUB"
+    ],
+    "cSpell.words": [
+        "Configuración",
+        "escena"
     ]
 }

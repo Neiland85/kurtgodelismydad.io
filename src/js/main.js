@@ -1,7 +1,18 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import * as dat from 'dat.gui';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 
+const composer = new EffectComposer(renderer);
+composer.addPass(new RenderPass(scene, camera));
+
+const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85);
+bloomPass.threshold = 0.21;
+bloomPass.strength = 0.8;
+bloomPass.radius = 0.55;
+composer.addPass(bloomPass);
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer();
@@ -20,7 +31,16 @@ const cubeOptions = {
   rotationSpeed: 0.01,
   color: cube.material.color.getHex(),
 };
+function animate() {
+  requestAnimationFrame(animate);
+  cube.rotation.x += cubeOptions.rotationSpeed;
+  cube.rotation.y += cubeOptions.rotationSpeed;
+  controls.update();
+  composer.render();  }
+animate();
 
+camera.position.y = 2;
+camera.position.x = 0;
 camera.position.z = 5;
 
 gui.add(cubeOptions, 'rotationSpeed', 0, 0.1);
@@ -95,5 +115,6 @@ scene.add(plane);
 
 cube.castShadow = true;
 cube.receiveShadow = true;
+cube.frustumCulled = true;
 
 directionalLight.castShadow = true;

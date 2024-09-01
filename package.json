@@ -13,7 +13,7 @@
   "dependencies": {
     "dat.gui": "^0.7.9",
     "express": "^4.19.2",
-    "three": "^0.168.0"
+    "three": "^0.132.2"
   },
   "devDependencies": {
     "live-server": "^1.2.0"

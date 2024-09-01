@@ -157,3 +157,23 @@ directionalLight.castShadow = true;
 document.getElementById('github-button').addEventListener('click', () => {
   window.location.href = 'https://github.com/tu-usuario/tu-repositorio';
 });
+document.getElementById('filtergenius-button').addEventListener('click', function() {
+
+  fetch('https://api.filtergenius.com/your-endpoint', {  
+    method: 'POST',  // 
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer your-api-token' 
+    },
+    body: JSON.stringify({
+      input: 'Texto o datos que necesitas filtrar'
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Respuesta de FilterGenius:', data);
+    alert('FilterGenius ha respondido: ' + data.result);
+  })
+  .catch(error => console.error('Error:', error));
+});
+

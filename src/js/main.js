@@ -4,6 +4,16 @@ import * as dat from 'dat.gui';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import filterGeniusService from './services/filterGeniusService';
+
+document.getElementById('filtergenius-button').addEventListener('click', function() {
+  filterGeniusService.filterText('Texto que necesitas filtrar')
+    .then(response => {
+      console.log('Respuesta de FilterGenius:', response.data);
+      alert('FilterGenius ha respondido: ' + response.data.result);
+    })
+    .catch(error => console.error('Error:', error));
+});
 
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));

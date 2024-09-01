@@ -26,11 +26,46 @@ const texture = new THREE.TextureLoader().load('path/to/your/texture.jpg');
 const geometry = new THREE.BoxGeometry();
 const material = new THREE.MeshStandardMaterial({ map: texture });
 const cube = new THREE.Mesh(geometry, material);
+const repoCubeGeometry = new THREE.BoxGeometry(1, 1, 1);
+const repoCubeMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff });
+const repoCube = new THREE.Mesh(repoCubeGeometry, repoCubeMaterial);
+scene.add(repoCube);
 scene.add(cube);
+
+repoCube.position.x = 2;  
+
+window.addEventListener('click', (event) => {
+ mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  raycaster.setFromCamera(mouse, camera);
+  const intersects = raycaster.intersectObjects([repoCube]);
+
+    if (intersects.length > 0) {
+    window.location.href = 'https://github.com/Neiland85/kurtgodelismydad.io';
+  }
+});
+
+window.addEventListener('click', (event) => {
+  if (intersects.length > 0) {
+    repoCube.material.color.set(Math.random() * 0xffffff);
+  }
+});
+
 const cubeOptions = {
   rotationSpeed: 0.01,
   color: cube.material.color.getHex(),
 };
+
+function animate() {
+  requestAnimationFrame(animate);
+  repoCube.rotation.x += 0.01;
+  repoCube.rotation.y += 0.01;
+  controls.update();
+  composer.render();
+}
+animate();
+
 function animate() {
   requestAnimationFrame(animate);
   cube.rotation.x += cubeOptions.rotationSpeed;
@@ -118,3 +153,7 @@ cube.receiveShadow = true;
 cube.frustumCulled = true;
 
 directionalLight.castShadow = true;
+
+document.getElementById('github-button').addEventListener('click', () => {
+  window.location.href = 'https://github.com/tu-usuario/tu-repositorio';
+});

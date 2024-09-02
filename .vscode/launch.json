@@ -6,10 +6,19 @@
       "request": "launch",
       "name": "Run Script: start",
       "program": "${workspaceFolder}/node_modules/.bin/npm",
-      "args": ["start"],
+      "args": [
+        "start"
+      ],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
+    },
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@adobe/css-tools/dist",
+      "program": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@adobe/css-tools/dist/build/Debug/outDebug"
     }
   ]
 }
-

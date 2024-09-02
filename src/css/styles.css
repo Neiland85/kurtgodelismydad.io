@@ -11,3 +11,23 @@ body {
   height: 100vh;
 }
 
+/* Si hay imágenes dentro del contenedor */
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Ejemplo de pre-carga de fuente personalizada */
+@font-face {
+  font-family: 'CustomFont';
+  src: url('ruta/fuente.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* Optimización de imágenes */
+.background-image {
+  background-image: url('ruta/imagen.webb');
+  background-size: cover;
+  background-position: center;
+}

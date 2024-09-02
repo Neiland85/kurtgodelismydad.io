@@ -162,7 +162,7 @@ window.addEventListener('resize', () => {
   const width = window.innerWidth;
 
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-plane.rotation.x = -Math.PI / 2;
+  plane.rotation.x = -Math.PI / 2;
 plane.position.x = 0;
 plane.position.z = 5;
 plane.position.y = -1;

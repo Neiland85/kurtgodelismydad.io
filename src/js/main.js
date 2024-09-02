@@ -8,6 +8,7 @@ const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshStandardMaterial({ map: texture })
 export const cube = new THREE.Mesh(geometry, material)
 scene.add(cube)
+cube.position.x = 0
 cube.position.x = 1
 const repoCubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 const repoCubeMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff })
@@ -63,7 +64,7 @@ window.addEventListener('click', (event) => async function (_params) {
         console.log(response)
         alert('FilterGenius ha respondido: ' + response.data.result)
       })
-      .catch((error) => {
+      .catch(more.value() => {
         return console.error('Error:', eraaror)
       })
   })

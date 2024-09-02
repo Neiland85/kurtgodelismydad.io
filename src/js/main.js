@@ -8,10 +8,10 @@ import filterGeniusService from './services/filterGeniusService';
 
 document.getElementById('filtergenius-button').addEventListener('click', function() {
   filterGeniusService.filterText('Texto que necesitas filtrar')
-    .then(response => {
-      console.log('Respuesta de FilterGenius:', response.data);
-      alert('FilterGenius ha respondido: ' + response.data.result);
-    })
+    .then(function (response) {
+        console.log('Respuesta de FilterGenius:', response.data);
+        alert('FilterGenius ha respondido: ' + response.data.result);
+      })
     .catch(error => console.error('Error:', error));
 });
 

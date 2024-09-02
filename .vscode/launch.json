@@ -2,14 +2,25 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": ".NET Core Launch (console)",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build",
+      "program": "${workspaceFolder}/bin/Debug/<target-framework>/<project-name.dll>",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "stopAtEntry": false,
+      "console": "internalConsole"
+    },
+    {
       "type": "bashdb",
       "request": "launch",
       "name": "Bash-Debug (type in script name)",
       "cwd": "${workspaceFolder}",
       "program": "${command:AskForScriptName}",
       "args": []
-    },
-    {
+        },
+                  {
       "name": ".NET Core Attach",
       "type": "coreclr",
       "request": "attach",
@@ -35,30 +46,28 @@
       "program": "${workspaceFolder}/node_modules/.bin/npm",
       "args": [
         "start"
-      [{
+      "[{
           // Synopsis: 
-          "apiVersion": "github.com/microsoft/PSRule/v1",
-          "kind": "Rule",
-          "metadata": {
+          : "github.com/microsoft/PSRule/v1",
+          'kind',
+          : {
               "name": "workflow${defaultBuildTask}"
           },
-          "spec": {
-              "type": [
+          : {
+              "'type': [
                   ""
               ],
-              "condition": {
-                  
-              }
           }
-      }]],
+      }]"],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
-    },
-    {
+       {};
       "name": "C/C++ Runner: Debug Session",
+      "type": "cppdbg",
       "type": "lldb",
       "request": "launch",
       "args": [],
+      "cwd": "${workspaceFolder}",
       "cwd": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@alloc/quick-lru",
       "program": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@alloc/quick-lru/build/Debug/outDebug"
     }

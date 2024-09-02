@@ -5,16 +5,31 @@ import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
 import filterGeniusService from './services/filterGeniusService';
+import reportWebVitals from './reportWebVitals';
+import reportWebVitals from './reportWebVitals';
+
+reportWebVitals(console.log);
 
 document.getElementById('filtergenius-button').addEventListener('click', function() {
   filterGeniusService.filterText('Texto que necesitas filtrar')
     .then(function (response) {
-        console.log('Respuesta de FilterGenius:', response.data);
+      console.log('Respuesta de FilterGenius:', response.data);
         alert('FilterGenius ha respondido: ' + response.data.result);
       })
     .catch(error => console.error('Error:', error));
 });
 
+const LazyComponent = React.lazy(() => import('./LazyComponent'));
+const Suspense = React.Suspense;
+
+
+root.render(
+  <React.StrictMode>
+    <Suspense fallback={<div>Loading...</div>}>
+      <LazyComponent />
+    </Suspense>
+  </React.StrictMode>
+);
 const composer = new EffectComposer(renderer);
 composer.addPass(new RenderPass(scene, camera));
 
@@ -94,9 +109,10 @@ gui.addColor(cubeOptions, 'color').onChange((value) => {
 });
 function animate() {
   requestAnimationFrame(animate);
-  cube.rotation.x += cubeOptions.rotationSpeed;
   cube.rotation.y += cubeOptions.rotationSpeed;
+  cube.rotation.x += cubeOptions.rotationSpeed;
   controls.update();
+  composer.render();
   renderer.render(scene, camera);
 }
 animate();
@@ -116,9 +132,9 @@ window.addEventListener('click', (event) => {
 
   raycaster.setFromCamera(mouse, camera);
 
-   const intersects = raycaster.intersectObjects(scene.children);
+  const intersects = raycaster.intersectObjects(scene.children);
 
-if (intersects.length > 0) {
+  if (intersects.length > 0) {
     intersects[0].object.material.color.set(Math.random() * 0xffffff);
   }
 });
@@ -154,9 +170,17 @@ const planeGeometry = new THREE.PlaneGeometry(10, 10);
 const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.5 });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 plane.rotation.x = -Math.PI / 2;
+plane.position.x = 0;
+plane.position.z = 5;
 plane.position.y = -1;
+plane.castShadow = true;
 plane.receiveShadow = true;
 scene.add(plane);
+
+cube.castShadow = true;
+cube.receiveShadow = true;
+repoCube.castShadow = true;
+repoCube.receiveShadow = true;
 
 cube.castShadow = true;
 cube.receiveShadow = true;
@@ -165,9 +189,13 @@ cube.frustumCulled = true;
 directionalLight.castShadow = true;
 
 const doctypeObj = document.doctype;
+console.log(`doctypeObj: ${doctypeObj}`);
 
 console.log(`doctypeObj.name: ${doctypeObj.name}`);
+console.log(`doctypeObj.publicId: ${doctypeObj.publicId}`);
+console.log(`doctypeObj.systemId: ${doctypeObj.systemId}`);
 console.log(`doctypeObj.internalSubset: ${doctypeObj.internalSubset}`);
+console.log(`doctypeObj.publicSubset: ${doctypeObj.publicSubset}`);
 console.log(`doctypeObj.publicId: ${doctypeObj.publicId}`);
 console.log(`doctypeObj.systemId: ${doctypeObj.systemId}`);
 

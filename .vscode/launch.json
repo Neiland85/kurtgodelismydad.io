@@ -27,7 +27,7 @@
       "name": ".NET Core Attach",
       "type": "coreclr",
       "request": "attach"
-    },
+                          },
     {
       "type": "node",
       "request": "launch",
@@ -35,7 +35,22 @@
       "program": "${workspaceFolder}/node_modules/.bin/npm",
       "args": [
         "start"
-      ],
+      [{
+          // Synopsis: 
+          "apiVersion": "github.com/microsoft/PSRule/v1",
+          "kind": "Rule",
+          "metadata": {
+              "name": "workflow${defaultBuildTask}"
+          },
+          "spec": {
+              "type": [
+                  ""
+              ],
+              "condition": {
+                  
+              }
+          }
+      }]],
       "console": "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
     },

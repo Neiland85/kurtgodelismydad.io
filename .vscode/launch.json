@@ -17,8 +17,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@adobe/css-tools/dist",
-      "program": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@adobe/css-tools/dist/build/Debug/outDebug"
+      "cwd": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@alloc/quick-lru",
+      "program": "/Users/estudio/Projects/GitHub/KURTGODELISMYDAD/kurtgodelismydad.io/my-threejs-app/node_modules/@alloc/quick-lru/build/Debug/outDebug"
     }
   ]
 }

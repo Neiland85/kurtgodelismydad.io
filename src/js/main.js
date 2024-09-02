@@ -200,7 +200,7 @@ console.log(`doctypeObj.publicId: ${doctypeObj.publicId}`);
 console.log(`doctypeObj.systemId: ${doctypeObj.systemId}`);
 
 document.getElementById('github-button').addEventListener('click', () => {
-  window.location.href = 'https://github.com/tu-usuario/tu-repositorio';
+  window.location.href = 'https://github.com/Neiland85/https://github.com/Neiland85/kurtgodelismydad.io.git';
 });
 document.getElementById('filtergenius-button').addEventListener('click', function() {
 
@@ -208,6 +208,7 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
     method: 'POST',  // 
     headers: {
       'Content-Type': 'application/json',
+      'Accept': 'application/json',
       'Authorization': 'Bearer your-api-token' 
     },
     body: JSON.stringify({
@@ -219,6 +220,5 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
     console.log('Respuesta de FilterGenius:', data);
     alert('FilterGenius ha respondido: ' + data.result);
   })
-  .catch(error => console.error('Error:', error));
+    .catch(error => console.error('Error:', error));
 });
-

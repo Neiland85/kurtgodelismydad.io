@@ -1,27 +1,43 @@
 {
-  "extends": [
-    "development",
-    "plugin:prettier/recommended"
+  "name": "kurtgodelismydad.io",
+  "version": "1.0.0",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server",
+    "build": "webpack",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "keywords": [],
+  "author": "Neiland",
+  "license": "ISC",
+  "description": "CuMSHOT",
+  "dependencies": {
+    "three": "^0.168.0",
+    "dat.gui": "^0.7.9",
+    "axios": "^1.3.4",
+    "express": "^4.19.2", // backend
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.25.2" // Babel
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
-  "plugins": [
-    "prettier"
-    ],
-  "rules": {
-    "prettier/prettier": "error";
-    "no-unused-vars": "off",
-    "no-console": "off",
-    "no-undef": "off",
-    "no-unused-expressions": "off",
-    "no-unused-labels": "off",
-    "no-useless-escape": "off",
-    "no-useless-return": "off",
-    "no-useless-constructor": "off",
-    "no-useless-computed-key": "off",
-    "no-useless-rename": "off",
-    "no-useless-catch": "off",
-    "no-inline-styles": "off",
-    "no-invalid-this": "off",
-    "no-invalid-regexp": "off",
-    "meta-viewport": "off"
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

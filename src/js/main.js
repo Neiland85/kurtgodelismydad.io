@@ -227,4 +227,4 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
     alert('FilterGenius ha respondido: ' + data.result);
   })
     .catch(error => console.error('Error:', error));
-});
+}

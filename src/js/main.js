@@ -1,26 +1,26 @@
 // 'process'
 const composer = new EffectComposer(renderer)
 composer.addPass(new RenderPass(scene, camera))
-const bloomPass = new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85)
-composer.addPass(bloomPass)
+composer.addPass(new UnrealBloomPass(new THREE.Vector2(window.innerWidth, window.innerHeight), 1.5, 0.4, 0.85))
 
 // 'Objects'
 const texture = new THREE.TextureLoader().load('path/to/your/texture.jpg') 
 const geometry = new THREE.BoxGeometry()
 const material = new THREE.MeshStandardMaterial({ map: texture })
-const cube = new THREE.Mesh(geometry, material)
+export const cube = new THREE.Mesh(geometry, material)
+scene.add(cube)
+cube.position.x = 1
 const repoCubeGeometry = new THREE.BoxGeometry(1, 1, 1)
 const repoCubeMaterial = new THREE.MeshStandardMaterial({ color: 0x0000ff })
 const repoCube = new THREE.Mesh(repoCubeGeometry, repoCubeMaterial)
 scene.add(repoCube)
-scene.add(cube)
-
 repoCube.position.x = 2  
 
 // Luz
 const ambientLight = new THREE.AmbientLight(0x404040) 
 scene.add(ambientLight)
 const directionalLight = new THREE.DirectionalLight(0xffffff, 1)
+
 directionalLight.position.set(5, 5, 5).normalize()
 scene.add(directionalLight)
 
@@ -40,9 +40,9 @@ window.addEventListener('click', (event) => {
   cube.rotation.x += 0.01
   cube.rotation.y += 0.01
   repoCube.rotation.x += 0.01
-  repoCube.rotation.y += 0.01
+    repoCube.rotation.y += 0.01
   controls.update()
-  composer.render()
+    composer.render()
   renderer.render(scene, camera)
 }
 animate()
@@ -63,5 +63,7 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
 
       alert('FilterGenius ha respondido: ' + response.data.result)
     })
-    .catch(error => console.error('Error:', error))
+    .catch((error) => {
+      return console.error('Error:', error)
+    })
 })

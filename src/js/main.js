@@ -164,6 +164,13 @@ cube.frustumCulled = true;
 
 directionalLight.castShadow = true;
 
+const doctypeObj = document.doctype;
+
+console.log(`doctypeObj.name: ${doctypeObj.name}`);
+console.log(`doctypeObj.internalSubset: ${doctypeObj.internalSubset}`);
+console.log(`doctypeObj.publicId: ${doctypeObj.publicId}`);
+console.log(`doctypeObj.systemId: ${doctypeObj.systemId}`);
+
 document.getElementById('github-button').addEventListener('click', () => {
   window.location.href = 'https://github.com/tu-usuario/tu-repositorio';
 });

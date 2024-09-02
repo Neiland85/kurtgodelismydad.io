@@ -1,0 +1,9 @@
+const texture = new THREE.TextureLoader().load('assets/textures/texture.jpg');
+
+const loader = new GLTFLoader();
+loader.load('assets/models/model.glb', function(gltf) {
+  scene.add(gltf.scene);
+}, undefined, function(error) {
+  console.error('An error happened', error);
+});
+

@@ -5,6 +5,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "live-server",
+       "run": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "engines": {
   "build": "webpack"
   },
   "keywords": [],

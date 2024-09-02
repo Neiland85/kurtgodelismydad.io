@@ -28,4 +28,4 @@ scene.add(directionalLight)
 // 'raycaster'
 const raycaster = new THREE.Raycaster()
 const mouse = new THREE.Vector2()
-window.addEventListener('click', (event) => 
+window.addEventListener('click',  

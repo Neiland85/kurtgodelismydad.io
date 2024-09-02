@@ -44,22 +44,10 @@
       "request": "launch",
       "name": "Run Script: start",
       "program": "${workspaceFolder}/node_modules/.bin/npm",
-      "args": [
-        "start"
-      "[{
-          // Synopsis: 
-          : "github.com/microsoft/PSRule/v1",
-          'kind',
-          : {
-              "name": "workflow${defaultBuildTask}"
-          },
-          : {
-              "'type': [
-                  ""
-              ],
+      ,
           }
       }]"],
-      "console": "integratedTerminal",
+      'console': "integratedTerminal",
       "internalConsoleOptions": "neverOpen"
        {};
       "name": "C/C++ Runner: Debug Session",

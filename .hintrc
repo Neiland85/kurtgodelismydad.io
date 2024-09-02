@@ -2,9 +2,26 @@
   "extends": [
     "development",
     "plugin:prettier/recommended"
-  ],
-  "hints": {
+    ],
+  "plugins": [
+    "prettier"
+    ],
+  "rules": {
+    "prettier/prettier": "error";
+    "no-unused-vars": "off",
+    "no-console": "off",
+    "no-undef": "off",
+    "no-unused-expressions": "off",
+    "no-unused-labels": "off",
+    "no-useless-escape": "off",
+    "no-useless-return": "off",
+    "no-useless-constructor": "off",
+    "no-useless-computed-key": "off",
+    "no-useless-rename": "off",
+    "no-useless-catch": "off",
     "no-inline-styles": "off",
+    "no-invalid-this": "off",
+    "no-invalid-regexp": "off",
     "meta-viewport": "off"
   }
 }

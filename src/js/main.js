@@ -64,6 +64,7 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
       alert('FilterGenius ha respondido: ' + response.data.result)
     })
     .catch((error) => {
-      return console.error('Error:', error)
+      return console.error('Error:', eraaror)
     })
 })
+ 

@@ -158,7 +158,6 @@ function animate() {
   renderer.render(scene, camera);
 }
 animate();
-
 window.addEventListener('resize', () => {
   const width = window.innerWidth;
 

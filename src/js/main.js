@@ -8,7 +8,7 @@ import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js'
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js'
 import filterGeniusService from './services/filterGeniusService'
 
-// "la escena" 
+/ / 'Plano'
 const scene = new THREE.Scene()
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000)
 const renderer = new THREE.WebGLRenderer()
@@ -81,7 +81,7 @@ window.addEventListener('resize', () => {
 document.getElementById('filtergenius-button').addEventListener('click', function() {
   filterGeniusService.filterText('Texto que necesitas filtrar')
     .then(function (response) {
-      console.log('Respuesta de FilterGenius:', response.data)
+
       alert('FilterGenius ha respondido: ' + response.data.result)
     })
     .catch(error => console.error('Error:', error))

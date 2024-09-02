@@ -8,9 +8,9 @@
   "build": "webpack"
   },
   "keywords": [],
-  "author": "",
+  "author": "Neiland",
   "license": "ISC",
-  "description": "",
+  "description": "CuMSHOT",
   "dependencies": {
     "dat.gui": "^0.7.9",
     "express": "^4.19.2",

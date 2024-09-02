@@ -1,12 +1,20 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 import * as dat from 'dat.gui';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js';
 import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
 import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
 import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { EffectPass } from 'three/examples/jsm/postprocessing/EffectPass.js';
 import filterGeniusService from './services/filterGeniusService';
 import reportWebVitals from './reportWebVitals';
-import reportWebVitals from './reportWebVitals';
+
 
 reportWebVitals(console.log);
 
@@ -153,21 +161,7 @@ animate();
 
 window.addEventListener('resize', () => {
   const width = window.innerWidth;
-  const height = window.innerHeight;
 
-  renderer.setSize(width, height);
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
-});
-
-window.addEventListener('click', () => {
-  cube.material.color.set(Math.random() * 0xffffff); 
-});
-renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-
-const planeGeometry = new THREE.PlaneGeometry(10, 10);
-const planeMaterial = new THREE.ShadowMaterial({ opacity: 0.5 });
 const plane = new THREE.Mesh(planeGeometry, planeMaterial);
 plane.rotation.x = -Math.PI / 2;
 plane.position.x = 0;
@@ -185,6 +179,17 @@ repoCube.receiveShadow = true;
 cube.castShadow = true;
 cube.receiveShadow = true;
 cube.frustumCulled = true;
+
+function handleCubeClick() {
+  cube.material.color.set(Math.random() * 0xffffff);
+}
+
+function handleRepoCubeClick() {
+  repoCube.material.color.set(Math.random() * 0xffffff);
+}
+
+window.addEventListener('click', handleCubeClick);
+window.addEventListener('click', handleRepoCubeClick);
 
 directionalLight.castShadow = true;
 
@@ -216,8 +221,9 @@ document.getElementById('filtergenius-button').addEventListener('click', functio
     })
   })
   .then(response => response.json())
-  .then(data => {
-    console.log('Respuesta de FilterGenius:', data);
+    .then(data => {
+      console.log('Respuesta de FilterGenius:', data);
+      console.log('Respuesta de FilterGenius:', data.result);
     alert('FilterGenius ha respondido: ' + data.result);
   })
     .catch(error => console.error('Error:', error));

@@ -1,8 +1,10 @@
 {
   "extends": [
-    "development"
+    "development",
+    "plugin:prettier/recommended"
   ],
   "hints": {
-    "no-inline-styles": "off"
+    "no-inline-styles": "off",
+    "meta-viewport": "off"
   }
 }

@@ -10,19 +10,18 @@
     "format": "react-scripts format",
     "eject": "react-scripts eject"
   },
-"dependencies": {
-  "react": "^18.3.1",
-  
-  "react-dom": "^18.3.1",
-  "react-scripts": "5.0.1", 
-  "three": "^0.168.0",
-  "babel-loader": "^8.2.6",
-  "dat.gui": "^0.7.9",
-  "axios": "^1.3.4",
-  "express": "^4.19.2",
-  "web-vitals": "^2.1.4"
-},
-"devDependencies":   {
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-scripts": "5.0.1",
+    "three": "^0.168.0",
+    "babel-loader": "^8.2.6",
+    "dat.gui": "^0.7.9",
+    "axios": "^1.3.4",
+    "express": "^4.19.2",
+    "web-vitals": "^2.1.4"
+  },
+  "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@'niccolo'-'ribaudo'/eslint-scope-5-internals": "^5.1.1-v1",
@@ -58,5 +57,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Este proyecto es una aplicación web 3D interactiva creada con Three.js, que incluye animaciones, interacciones con el usuario, y una integración visual y funcional con GitHub. Explora un mundo tridimensional donde los cubos giran, cambian de color, y el cielo es el límite.",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

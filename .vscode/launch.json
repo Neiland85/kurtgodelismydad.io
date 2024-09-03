@@ -43,8 +43,10 @@
       "type": "node",
       "request": "launch",
       "name": "Run Script: start",
-      "program": "${workspaceFolder}/node_modules/.bin/npm",
-      ,
+      "program": "${workspaceFolder}/node_modules/.bin/npm";]
+      "args":
+        "run",
+        "start"
           }
       }]"],
       'console': "integratedTerminal",
